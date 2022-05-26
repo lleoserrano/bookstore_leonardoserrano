@@ -9,6 +9,7 @@
    <p>
 
    - [📖 About](#-about)
+   - [📖 Preview](#-preview)
    - [🛠️ Features and Technologies](#%EF%B8%8F-features-and-technologies)
    - [🤔 How to use](#-how-to-use)
  
@@ -28,6 +29,17 @@
     - In the detail view, the user can also favorite or unfavorite a book. This option should be stored locally so it persists through each app usage.<br>
     - Clicking on the Buy link should open the link on the web navigator.<br>
 </p>
+
+---
+
+<h2>📱 Preview</h2>
+
+   <p align="center">
+      <img src="assets\images\home_preview.png" width="200" alt="Home Preview"/>
+      <img src="assets\images\detail_preview.png" width="200" alt="Detail Preview"/>
+      <img src="assets\images\bd_preview_1.png" width="200" alt="BD Preview 1"/>
+   </p>
+   
 
 ---
 
