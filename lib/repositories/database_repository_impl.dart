@@ -61,15 +61,24 @@ class DatabaseRepositoryImpl implements DatabaseRepository {
     final conn = await _sqliteConnectionFactory.openConnection();
     final result = await conn.rawQuery(
         'select * from localData where id = ?', [_authProvider.user.id]);
-    final userListFavUpdate =
-        UserModel.fromMap(result.first).booksFav.split(';');
 
-    if (userListFavUpdate.contains(id)) {
-      userListFavUpdate.remove(id);
+    if (result.isNotEmpty) {
+      final indexUser = result
+          .map((e) => UserModel.fromMap(e))
+          .toList()
+          .indexWhere((element) => element.id == _authProvider.user.id);
+      final userListFavUpdate =
+          UserModel.fromMap(result[indexUser]).booksFav.split(';');
+
+      if (userListFavUpdate.contains(id)) {
+        userListFavUpdate.remove(id);
+      } else {
+        userListFavUpdate.add(id);
+      }
+      await conn.rawUpdate('update localData set booksFav = ? where id = ?',
+          [userListFavUpdate.join(';'), _authProvider.user.id]);
     } else {
-      userListFavUpdate.add(id);
+      return;
     }
-    await conn.rawUpdate('update localData set booksFav = ? where id = ?',
-        [userListFavUpdate.join(';'), _authProvider.user.id]);
   }
 }

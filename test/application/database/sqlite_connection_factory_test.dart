@@ -61,6 +61,9 @@ void main() async {
       var result = await db.query('localData');
 
       expect(result, []);
+
+      await db.execute('delete from localData');
+      await db.close();
     });
   });
 }
