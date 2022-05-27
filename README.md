@@ -38,6 +38,7 @@
       <img src="assets\images\home_preview.png" width="200" alt="Home Preview"/>
       <img src="assets\images\detail_preview.png" width="200" alt="Detail Preview"/>
       <img src="assets\images\bd_preview_1.png" width="200" alt="BD Preview 1"/>
+      <img src="assets\images\test_preview.png" width="200" alt="BD Preview 1"/>
    </p>
    
 
